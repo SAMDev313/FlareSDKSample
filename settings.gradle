@@ -1,12 +1,12 @@
 
 pluginManagement {
     repositories {
-        def base64Token = "Z2hwX05vYTBxaWFTcUdaR1JDRjZtQUhNclZ1d0FnRWNhaDNxU0lHNA=="
-        def decodedBytes = Base64.getDecoder().decode(base64Token)
-        def decryptedToken = new String(decodedBytes, "UTF-8")
         gradlePluginPortal()
         google()
         mavenCentral()
+        def base64Token = "Z2hwX05vYTBxaWFTcUdaR1JDRjZtQUhNclZ1d0FnRWNhaDNxU0lHNA=="
+        def decodedBytes = Base64.getDecoder().decode(base64Token)
+        def decryptedToken = new String(decodedBytes, "UTF-8")
         maven {
             name = "SideEngineSDK"
             url = uri("https://maven.pkg.github.com/k-safe/busbysdk_android")
@@ -20,11 +20,11 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        google()
+        mavenCentral()
         def base64Token = "Z2hwX05vYTBxaWFTcUdaR1JDRjZtQUhNclZ1d0FnRWNhaDNxU0lHNA=="
         def decodedBytes = Base64.getDecoder().decode(base64Token)
         def decryptedToken = new String(decodedBytes, "UTF-8")
-        google()
-        mavenCentral()
         maven {
             name = "SideEngineSDK"
             url = uri("https://maven.pkg.github.com/k-safe/busbysdk_android")
