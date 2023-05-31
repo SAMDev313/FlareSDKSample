@@ -1,5 +1,9 @@
+
 pluginManagement {
     repositories {
+        def base64Token = "Z2hwX05vYTBxaWFTcUdaR1JDRjZtQUhNclZ1d0FnRWNhaDNxU0lHNA=="
+        def decodedBytes = Base64.getDecoder().decode(base64Token)
+        def decryptedToken = new String(decodedBytes, "UTF-8")
         gradlePluginPortal()
         google()
         mavenCentral()
@@ -8,7 +12,7 @@ pluginManagement {
             url = uri("https://maven.pkg.github.com/k-safe/busbysdk_android")
             credentials {
                 username = gitUserName
-                password = gitToken
+                password = decryptedToken
             }
         }
     }
@@ -16,6 +20,9 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        def base64Token = "Z2hwX05vYTBxaWFTcUdaR1JDRjZtQUhNclZ1d0FnRWNhaDNxU0lHNA=="
+        def decodedBytes = Base64.getDecoder().decode(base64Token)
+        def decryptedToken = new String(decodedBytes, "UTF-8")
         google()
         mavenCentral()
         maven {
@@ -23,7 +30,7 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/k-safe/busbysdk_android")
             credentials {
                 username = gitUserName
-                password = gitToken
+                password = decryptedToken
             }
         }
     }
